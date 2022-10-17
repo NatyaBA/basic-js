@@ -9,17 +9,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  * @example
  * 
- * createDreamTeam(['Matt', 'Ann', 'Dmitry', 'Max']) => 'ADMM'
+ *createDreamTeam(['Matt', 'Ann', 'Dmitry', 'Max']) => 'ADMM' 
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(members) {
-  if (typeof members !== 'string' && !Array.isArray(members)) { return false }
+ function createDreamTeam(members) {
+  if (typeof members !== 'string' && !Array.isArray(members)) { 
+    return false 
+  }
     let newArr = [];
     members.forEach(item => {
+      if (typeof(item) == 'string')
         newArr.push(item.substr(0,1));
     })
-    return(newArr.sort());
+    return(newArr.sort().join(''));
 }
 
 module.exports = {
